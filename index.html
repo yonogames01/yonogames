@@ -6,21 +6,27 @@
 <meta name="theme-color" content="#080812">
 <title>YonoGames | Play Beyond Limits</title>
 <style>
-:root{--bg:#080812;--card:#141427;--cyan:#00eaff;--purple:#a855f7;--pink:#ff3d9a;--muted:#aaaac0}
+:root{--bg:#080812;--card:#141427;--cyan:#00eaff;--purple:#a855f7;--pink:#ff3d9a;--tg:#24A1DE;--muted:#aaaac0}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:white;font-family:Arial,sans-serif}
-header{position:sticky;top:0;z-index:10;background:#090915ed;backdrop-filter:blur(12px);padding:17px 5%;display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid #292940}
-.logo{font-size:26px;font-weight:900;background:linear-gradient(90deg,var(--cyan),var(--purple));color:transparent;background-clip:text;-webkit-background-clip:text}
-nav{display:flex;gap:20px}
-nav a{color:white;text-decoration:none;font-weight:bold}
+header{position:sticky;top:0;z-index:10;background:#090915ed;backdrop-filter:blur(12px);padding:15px 5%;display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid #292940}
+.logo{font-size:24px;font-weight:900;background:linear-gradient(90deg,var(--cyan),var(--purple));color:transparent;background-clip:text;-webkit-background-clip:text}
+nav{display:flex;gap:18px;align-items:center}
+nav a{color:white;text-decoration:none;font-weight:bold;font-size:14px}
 nav a:hover{color:var(--cyan)}
-.search input{padding:11px 15px;border-radius:25px;background:#17172b;border:1px solid #45456a;color:white;outline:none}
-.hero{text-align:center;padding:85px 20px;background:radial-gradient(ellipse at top,#7023aa66,transparent 65%),radial-gradient(ellipse at bottom right,#00eaff22,transparent 50%)}
+.tg-nav{background:var(--tg);color:white !important;padding:8px 16px;border-radius:20px;font-size:13px;box-shadow:0 0 12px #24A1DE66;transition:.3s}
+.tg-nav:hover{transform:scale(1.05);box-shadow:0 0 20px var(--tg)}
+.search input{padding:10px 15px;border-radius:25px;background:#17172b;border:1px solid #45456a;color:white;outline:none}
+.hero{text-align:center;padding:80px 20px;background:radial-gradient(ellipse at top,#7023aa66,transparent 65%),radial-gradient(ellipse at bottom right,#00eaff22,transparent 50%)}
 .hero small{color:var(--cyan);letter-spacing:4px;font-weight:bold}
-.hero h1{font-size:clamp(36px,7vw,70px);margin:22px 0}
+.hero h1{font-size:clamp(34px,7vw,68px);margin:20px 0}
 .hero h1 span{color:var(--cyan)}
 .hero p{color:var(--muted);max-width:600px;margin:auto;line-height:1.7}
-.btn{display:inline-block;margin-top:25px;padding:14px 30px;border:0;border-radius:30px;background:linear-gradient(90deg,var(--cyan),var(--purple));color:#080812;font-weight:900;cursor:pointer;text-decoration:none}
+.hero-btns{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;margin-top:25px}
+.btn{display:inline-block;padding:14px 28px;border:0;border-radius:30px;background:linear-gradient(90deg,var(--cyan),var(--purple));color:#080812;font-weight:900;cursor:pointer;text-decoration:none;transition:.3s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 5px 20px #00eaff55}
+.btn-tg{background:var(--tg);color:white;box-shadow:0 0 18px #24A1DE55}
+.btn-tg:hover{box-shadow:0 0 25px var(--tg)}
 .container{max-width:1250px;margin:auto;padding:45px 5%}
 .heading{font-size:25px;margin-bottom:25px;border-left:4px solid var(--cyan);padding-left:13px}
 .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
@@ -51,39 +57,45 @@ nav a:hover{color:var(--cyan)}
 .memory-card{aspect-ratio:1;background:#202044;border:1px solid var(--purple);border-radius:10px;color:white;font-size:28px;cursor:pointer}
 .memory-card.opened{background:#153a4a;border-color:var(--cyan)}
 footer{text-align:center;padding:30px;color:var(--muted);border-top:1px solid #292940}
-@media(max-width:650px){header{flex-wrap:wrap}nav{display:none}.search{width:100%}.search input{width:100%}.hero{padding:65px 15px}}
+@media(max-width:750px){header{flex-wrap:wrap}.search{width:100%}.search input{width:100%}.hero{padding:65px 15px}}
 </style>
 </head>
 <body>
 
 <header>
 <div class="logo">⚡ YONOGAMES</div>
-<nav><a href="#games">Games</a><a href="#about">About</a></nav>
+<nav>
+  <a href="#games">Games</a>
+  <a href="https://t.me/+g_jzR-qBnBdlZDY1" target="_blank" rel="noopener noreferrer" class="tg-nav">✈️ Join Telegram</a>
+</nav>
 <div class="search"><input id="search" placeholder="🔍 Search games..." oninput="render()"></div>
 </header>
 
 <section class="hero">
 <small>WELCOME TO THE NEXT LEVEL</small>
 <h1>PLAY BEYOND <span>LIMITS</span></h1>
-<p>Discover arcade adventures, challenge your skills and play exciting browser games. Your gaming universe starts here.</p>
-<a class="btn" href="#games">EXPLORE GAMES ↗</a>
+<p>Discover top gaming apps, exclusive signup bonuses, promo codes, and exciting browser games. Join our Telegram for daily updates!</p>
+<div class="hero-btns">
+  <a class="btn" href="#games">EXPLORE GAMES ↗</a>
+  <a class="btn btn-tg" href="https://t.me/+g_jzR-qBnBdlZDY1" target="_blank" rel="noopener noreferrer">✈️ JOIN TELEGRAM CHANNEL</a>
+</div>
 </section>
 
 <main class="container" id="games">
 <h2 class="heading">🎮 Explore Gaming Arena</h2>
 <div class="filters" id="filters">
 <button class="filter active" data-cat="All">All Games</button>
+<button class="filter" data-cat="Featured">Top Apps</button>
 <button class="filter" data-cat="Arcade">Arcade</button>
 <button class="filter" data-cat="Action">Action</button>
 <button class="filter" data-cat="Puzzle">Puzzle</button>
-<button class="filter" data-cat="Links">Game Links</button>
 </div>
 <div class="grid" id="grid"></div>
 </main>
 
 <section class="container" id="about">
 <h2 class="heading">About YonoGames</h2>
-<p style="color:var(--muted);line-height:1.8">YonoGames is your online arcade destination. Discover browser games, direct game links, and enjoy quick gaming sessions on desktop and mobile devices.</p>
+<p style="color:var(--muted);line-height:1.8">YonoGames is your ultimate gaming destination. Download top gaming apps, grab instant bonuses, play free browser games, and join our Telegram community for daily promo codes.</p>
 </section>
 
 <div class="modal" id="modal">
@@ -101,16 +113,17 @@ footer{text-align:center;padding:30px;color:var(--muted);border-top:1px solid #2
 <footer>© 2026 YonoGames | Play Beyond Limits ⚡</footer>
 
 <script>
-// =========================================================================
-// YAHAN SE AAP APNE GAMES AUR LINKS EDIT YA ADD KAR SAKTE HAIN:
-// Jin games me 'url' likha hai, wo seedha aapka link kholenge.
-// =========================================================================
 const games=[
+  {id:'slots-spin', name:'Slots Spin', cat:'Featured', icon:'🎰', desc:'Spin & win big rewards! Download now for instant signup bonus.', url:'https://slotsspinl.com/?code=XJBZX1XABDZ&t=1791289072'},
+  {id:'gold-rummy', name:'Gold Rummy', cat:'Featured', icon:'🃏', desc:'Play classic Rummy & card games with real players and daily bonuses.', url:'https://goldrummy10.com/?code=JLXMB26ES2F&t=1787142190'},
+  {id:'money-rummy', name:'Money Rummy', cat:'Featured', icon:'💰', desc:'Fast withdrawals, exciting tournaments & welcome rewards.', url:'https://moneyrummytt.com/?code=T1XBQ3B8QRY&t=1791546382'},
+  {id:'jaiho-91', name:'Jaiho 91 Official', cat:'Featured', icon:'👑', desc:'Official Jaiho 91 gaming portal with exclusive VIP rewards.', url:'https://jaiho91official.com/?code=C42NTNQ24Q9&t=1791259415'},
+  {id:'dhanwin-game', name:'Dhanwin Game', cat:'Featured', icon:'🔥', desc:'Join Dhanwin Game today and claim your special welcome bonus.', url:'https://www.dhanwingame.com/?code=47TPKTDDLFM&t=1791260914'},
+  
+  // Browser Mini Games
   {id:'snake', name:'Neon Snake', cat:'Arcade', icon:'🐍', desc:'Eat energy orbs and grow your snake.'},
   {id:'shooter', name:'Space Defender', cat:'Action', icon:'🚀', desc:'Destroy incoming enemies and survive.'},
-  {id:'memory', name:'Memory Master', cat:'Puzzle', icon:'🧠', desc:'Match pairs and test your memory.'},
-  {id:'link1', name:'Yono Special Game 1', cat:'Links', icon:'🔥', desc:'Click below to open official game link.', url:'https://example.com'},
-  {id:'link2', name:'Yono Special Game 2', cat:'Links', icon:'🎮', desc:'Download & play now from official link.', url:'https://play.google.com/store'}
+  {id:'memory', name:'Memory Master', cat:'Puzzle', icon:'🧠', desc:'Match pairs and test your memory.'}
 ];
 
 let category='All';
@@ -127,11 +140,11 @@ function render(){
     <article class="game">
       <div class="thumb">${g.icon}</div>
       <div class="info">
-        <span class="tag">${g.cat.toUpperCase()} • ${g.url ? 'DIRECT LINK' : 'PLAYABLE'}</span>
+        <span class="tag">${g.cat.toUpperCase()} • ${g.url ? 'OFFICIAL APP' : 'PLAYABLE'}</span>
         <h3>${g.name}</h3>
         <p>${g.desc}</p>
         ${g.url
-          ? `<a class="play ext-link" href="${g.url}" target="_blank" rel="noopener noreferrer">🔗 OPEN GAME LINK</a>`
+          ? `<a class="play ext-link" href="${g.url}" target="_blank" rel="noopener noreferrer">⬇️ DOWNLOAD / PLAY</a>`
           : `<button class="play" onclick="launch('${g.id}')">▶ PLAY NOW</button>`
         }
       </div>
@@ -152,48 +165,28 @@ const ctx=canvas.getContext('2d');
 const memoryGrid=document.getElementById('memoryGrid');
 let timer=null,active='',over=false,score=0;
 
-function launch(id){
-  active=id;
-  modal.classList.add('open');
-  restartGame();
-}
-function closeGame(){
-  clearInterval(timer);
-  timer=null;
-  document.onkeydown=null;
-  modal.classList.remove('open');
-}
+function launch(id){active=id;modal.classList.add('open');restartGame();}
+function closeGame(){clearInterval(timer);timer=null;document.onkeydown=null;modal.classList.remove('open');}
 function finish(message='GAME OVER'){
-  if(over)return;
-  over=true;
-  clearInterval(timer);
+  if(over)return;over=true;clearInterval(timer);
   document.getElementById('status').textContent=message+' • SCORE: '+score;
   document.getElementById('restart').style.display='inline-block';
 }
 function restartGame(){
-  clearInterval(timer);
-  over=false;score=0;
+  clearInterval(timer);over=false;score=0;
   document.getElementById('status').textContent='';
   document.getElementById('restart').style.display='none';
-  canvas.style.display='block';
-  memoryGrid.style.display='none';
+  canvas.style.display='block';memoryGrid.style.display='none';
   if(active==='snake')snake();
   if(active==='shooter')shooter();
   if(active==='memory')memory();
 }
-function hud(){
-  ctx.fillStyle='white';
-  ctx.font='16px Arial';
-  ctx.fillText('SCORE: '+score,15,25);
-}
+function hud(){ctx.fillStyle='white';ctx.font='16px Arial';ctx.fillText('SCORE: '+score,15,25);}
 
-// SNAKE GAME
 function snake(){
   document.getElementById('gameTitle').textContent='🐍 Neon Snake';
   document.getElementById('controls').textContent='Arrow keys or swipe to move';
-  let s=[{x:200,y:220}],dx=20,dy=0;
-  let food={x:100,y:100};
-
+  let s=[{x:200,y:220}],dx=20,dy=0,food={x:100,y:100};
   document.onkeydown=e=>{
     if(e.key==='ArrowUp'&&dy===0){dx=0;dy=-20}
     if(e.key==='ArrowDown'&&dy===0){dx=0;dy=20}
@@ -201,141 +194,63 @@ function snake(){
     if(e.key==='ArrowRight'&&dx===0){dx=20;dy=0}
   };
   let sx=0,sy=0;
-  canvas.ontouchstart=e=>{
-    sx=e.touches[0].clientX;sy=e.touches[0].clientY;
-  };
+  canvas.ontouchstart=e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY;};
   canvas.ontouchend=e=>{
     let t=e.changedTouches[0],ax=t.clientX-sx,ay=t.clientY-sy;
-    if(Math.abs(ax)>Math.abs(ay)){
-      if(ax>0&&dx===0){dx=20;dy=0}
-      if(ax<0&&dx===0){dx=-20;dy=0}
-    }else{
-      if(ay>0&&dy===0){dx=0;dy=20}
-      if(ay<0&&dy===0){dx=0;dy=-20}
-    }
+    if(Math.abs(ax)>Math.abs(ay)){if(ax>0&&dx===0){dx=20;dy=0}if(ax<0&&dx===0){dx=-20;dy=0}}
+    else{if(ay>0&&dy===0){dx=0;dy=20}if(ay<0&&dy===0){dx=0;dy=-20}}
   };
-
   timer=setInterval(()=>{
     let h={x:s[0].x+dx,y:s[0].y+dy};
-    if(h.x<0||h.x>=400||h.y<40||h.y>=440||
-    s.some(p=>p.x===h.x&&p.y===h.y)){
-      finish();return;
-    }
+    if(h.x<0||h.x>=400||h.y<40||h.y>=440||s.some(p=>p.x===h.x&&p.y===h.y)){finish();return;}
     s.unshift(h);
-    if(h.x===food.x&&h.y===food.y){
-      score+=10;
-      food={x:Math.floor(Math.random()*20)*20,y:40+Math.floor(Math.random()*20)*20};
-    }else s.pop();
-
-    ctx.fillStyle='#0d1021';ctx.fillRect(0,0,400,450);
-    hud();
+    if(h.x===food.x&&h.y===food.y){score+=10;food={x:Math.floor(Math.random()*20)*20,y:40+Math.floor(Math.random()*20)*20};}
+    else s.pop();
+    ctx.fillStyle='#0d1021';ctx.fillRect(0,0,400,450);hud();
     ctx.fillStyle='#ff3d9a';ctx.fillRect(food.x,food.y,18,18);
-    ctx.fillStyle='#00eaff';
-    s.forEach(p=>ctx.fillRect(p.x,p.y,18,18));
+    ctx.fillStyle='#00eaff';s.forEach(p=>ctx.fillRect(p.x,p.y,18,18));
   },115);
 }
 
-// SPACE SHOOTER
 function shooter(){
   document.getElementById('gameTitle').textContent='🚀 Space Defender';
   document.getElementById('controls').textContent='Use arrow keys or drag to move. Avoid enemies.';
-  let x=180,bullets=[],enemies=[],frame=0;
-  let keys={};
-
-  document.onkeydown=e=>keys[e.key]=true;
-  document.onkeyup=e=>keys[e.key]=false;
-
-  canvas.onpointermove=e=>{
-    if(e.buttons||e.pointerType==='touch'){
-      let r=canvas.getBoundingClientRect();
-      x=(e.clientX-r.left)*400/r.width-15;
-    }
-  };
-
+  let x=180,bullets=[],enemies=[],frame=0,keys={};
+  document.onkeydown=e=>keys[e.key]=true;document.onkeyup=e=>keys[e.key]=false;
+  canvas.onpointermove=e=>{if(e.buttons||e.pointerType==='touch'){let r=canvas.getBoundingClientRect();x=(e.clientX-r.left)*400/r.width-15;}};
   timer=setInterval(()=>{
-    frame++;
-    if(keys.ArrowLeft)x-=7;
-    if(keys.ArrowRight)x+=7;
-    x=Math.max(0,Math.min(370,x));
-
-    if(frame%13===0)bullets.push({x:x+13,y:405});
-    if(frame%32===0)enemies.push({x:Math.random()*360,y:0});
-
-    bullets.forEach(b=>b.y-=9);
-    enemies.forEach(en=>en.y+=3);
-
-    let hit=[];
-    enemies.forEach((en,i)=>{
-      if(bullets.some(b=>b.x>en.x&&b.x<en.x+28&&b.y>en.y&&b.y<en.y+28)){
-        hit.push(i);score+=10;
-      }
-      if(en.y>410)hit.push(i);
-    });
-    enemies=enemies.filter((en,i)=>!hit.includes(i));
-    bullets=bullets.filter(b=>b.y>0);
-
-    if(enemies.some(en=>en.y>385&&en.x<x+30&&en.x+28>x)){
-      finish();return;
-    }
-
-    ctx.fillStyle='#0d1021';ctx.fillRect(0,0,400,450);
-    hud();
-    ctx.fillStyle='#00eaff';ctx.fillRect(x,410,30,20);
-    ctx.fillStyle='#a855f7';
-    bullets.forEach(b=>ctx.fillRect(b.x,b.y,4,12));
-    ctx.fillStyle='#ff3d9a';
-    enemies.forEach(en=>ctx.fillRect(en.x,en.y,28,28));
+    frame++;if(keys.ArrowLeft)x-=7;if(keys.ArrowRight)x+=7;x=Math.max(0,Math.min(370,x));
+    if(frame%13===0)bullets.push({x:x+13,y:405});if(frame%32===0)enemies.push({x:Math.random()*360,y:0});
+    bullets.forEach(b=>b.y-=9);enemies.forEach(en=>en.y+=3);
+    let hit=[];enemies.forEach((en,i)=>{if(bullets.some(b=>b.x>en.x&&b.x<en.x+28&&b.y>en.y&&b.y<en.y+28)){hit.push(i);score+=10;}if(en.y>410)hit.push(i);});
+    enemies=enemies.filter((en,i)=>!hit.includes(i));bullets=bullets.filter(b=>b.y>0);
+    if(enemies.some(en=>en.y>385&&en.x<x+30&&en.x+28>x)){finish();return;}
+    ctx.fillStyle='#0d1021';ctx.fillRect(0,0,400,450);hud();
+    ctx.fillStyle='#00eaff';ctx.fillRect(x,410,30,20);ctx.fillStyle='#a855f7';bullets.forEach(b=>ctx.fillRect(b.x,b.y,4,12));
+    ctx.fillStyle='#ff3d9a';enemies.forEach(en=>ctx.fillRect(en.x,en.y,28,28));
   },25);
 }
 
-// MEMORY GAME
 function memory(){
-  canvas.style.display='none';
-  memoryGrid.style.display='grid';
+  canvas.style.display='none';memoryGrid.style.display='grid';
   document.getElementById('gameTitle').textContent='🧠 Memory Master';
   document.getElementById('controls').textContent='Find all matching pairs!';
-  let icons=['🚀','🐍','🏎️','⚽','🎮','👾','🏆','🔥'];
-  let deck=[...icons,...icons].sort(()=>Math.random()-.5);
-  let first=null,locked=false,matches=0,turns=0;
-  memoryGrid.innerHTML='';
-  deck.forEach((icon,i)=>{
-    let b=document.createElement('button');
-    b.className='memory-card';
-    b.textContent='?';
-    b.dataset.icon=icon;
+  let icons=['🚀','🐍','🏎️','⚽','🎮','👾','🏆','🔥'],deck=[...icons,...icons].sort(()=>Math.random()-.5);
+  let first=null,locked=false,matches=0,turns=0;memoryGrid.innerHTML='';
+  deck.forEach(icon=>{
+    let b=document.createElement('button');b.className='memory-card';b.textContent='?';b.dataset.icon=icon;
     b.onclick=()=>{
       if(locked||b.classList.contains('opened')||over)return;
-      b.textContent=icon;
-      b.classList.add('opened');
-      if(!first){first=b;return;}
-      turns++;
-      if(first.dataset.icon===b.dataset.icon){
-        matches++;
-        score+=20;
-        first=null;
-        if(matches===8)finish('YOU WIN');
-      }else{
-        locked=true;
-        let old=first;
-        first=null;
-        setTimeout(()=>{
-          if(over)return;
-          old.textContent='?';b.textContent='?';
-          old.classList.remove('opened');
-          b.classList.remove('opened');
-          locked=false;
-        },700);
-      }
+      b.textContent=icon;b.classList.add('opened');
+      if(!first){first=b;return;}turns++;
+      if(first.dataset.icon===b.dataset.icon){matches++;score+=20;first=null;if(matches===8)finish('YOU WIN');}
+      else{locked=true;let old=first;first=null;setTimeout(()=>{if(over)return;old.textContent='?';b.textContent='?';old.classList.remove('opened');b.classList.remove('opened');locked=false;},700);}
       document.getElementById('controls').textContent='Moves: '+turns+' | Matches: '+matches+'/8';
-    };
-    memoryGrid.appendChild(b);
+    };memoryGrid.appendChild(b);
   });
 }
 
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'&&modal.classList.contains('open'))closeGame();
-});
-
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeGame();});
 render();
 </script>
 </body>
